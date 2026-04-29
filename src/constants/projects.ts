@@ -1,4 +1,4 @@
-import { amazon, ernests, google, homelink, maze_runner, revdash } from "../assets";
+import { amazon, ernests, google, homelink, maze_runner, revdash_preview } from "../assets";
 import { Project } from "../models/project";
 
 export const projects: Project[] = [
@@ -120,7 +120,7 @@ export const projects: Project[] = [
 				color: "green-text-gradient",
 			},
 		],
-		image: revdash,
+		image: revdash_preview,
 		source_code_link: "https://github.com/joshua-figueroa/RevDash",
 		published_link: "/revdash",
 	},

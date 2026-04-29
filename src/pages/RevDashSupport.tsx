@@ -26,7 +26,7 @@ const faqs = [
 const RevDashSupport = () => {
 	return (
 		<div className="min-h-screen bg-primary text-white-100">
-			<div className="max-w-3xl mx-auto px-6 pt-16 pb-24 space-y-16">
+			<div className="max-w-2xl mx-auto px-6 pt-16 pb-24 space-y-16">
 				<header>
 					<Link to="/revdash" className="text-secondary text-sm hover:text-white-100 transition-colors">
 						← RevDash

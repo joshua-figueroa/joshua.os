@@ -94,7 +94,7 @@ const sections = [
 const RevDashPrivacy = () => {
 	return (
 		<div className="min-h-screen bg-primary text-white-100">
-			<div className="max-w-3xl mx-auto px-6 pt-16 pb-24">
+			<div className="max-w-2xl mx-auto px-6 pt-16 pb-24">
 				<Link to="/revdash" className="text-secondary text-sm hover:text-white-100 transition-colors">
 					← RevDash
 				</Link>
