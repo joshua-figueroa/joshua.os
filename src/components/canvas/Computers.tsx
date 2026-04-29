@@ -27,7 +27,7 @@ const Computers = ({ isMobile }: ComputersProps) => {
 				castShadow
 			/>
 			<pointLight intensity={1} />
-			<ambientLight intensity={2} color={new Color(0xefc070)} />
+			<ambientLight intensity={2} color={new Color(0xC08A5A)} />
 			<primitive
 				object={scene}
 				scale={isMobile ? 0.7 : 0.75}

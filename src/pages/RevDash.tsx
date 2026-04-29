@@ -25,11 +25,11 @@ const faqs = [
 
 const RevDash = () => {
 	return (
-		<div className="min-h-screen bg-primary text-white">
+		<div className="min-h-screen bg-primary text-white-100">
 			{/* Header */}
 			<header className="max-w-3xl mx-auto px-6 pt-16 pb-10 flex flex-col items-center text-center">
 				<img src={revdash} alt="RevDash" className="w-24 h-24 rounded-[22px] shadow-lg mb-6" />
-				<h1 className="text-4xl font-bold tracking-tight">RevDash</h1>
+				<h1 className="text-4xl font-bold tracking-tight text-white-100">RevDash</h1>
 				<p className="mt-3 text-secondary text-lg max-w-xl">
 					A personal iOS driving dashboard that connects to an OBD adapter to display
 					real-time vehicle data and log trips.
@@ -39,13 +39,13 @@ const RevDash = () => {
 			<div className="max-w-3xl mx-auto px-6 pb-24 space-y-16">
 				{/* FAQ */}
 				<section>
-					<h2 className="text-2xl font-semibold mb-8 border-b border-white/10 pb-4">
+					<h2 className="text-white-100 text-2xl font-semibold mb-8 border-b border-border-subtle pb-4">
 						Frequently Asked Questions
 					</h2>
 					<div className="space-y-8">
 						{faqs.map((faq) => (
 							<div key={faq.question}>
-								<h3 className="text-white font-semibold text-[17px] mb-2">{faq.question}</h3>
+								<h3 className="text-white-100 font-semibold text-[17px] mb-2">{faq.question}</h3>
 								<p className="text-secondary text-[15px] leading-relaxed">{faq.answer}</p>
 							</div>
 						))}
@@ -54,21 +54,21 @@ const RevDash = () => {
 
 				{/* Contact */}
 				<section>
-					<h2 className="text-2xl font-semibold mb-4 border-b border-white/10 pb-4">Support</h2>
+					<h2 className="text-white-100 text-2xl font-semibold mb-4 border-b border-border-subtle pb-4">Support</h2>
 					<p className="text-secondary text-[15px] leading-relaxed">
 						Have a question not covered above? Send an email and I'll get back to you as soon as possible.
 					</p>
 					<a
 						href="mailto:joshuavillartafigueroa@gmail.com"
-						className="inline-block mt-4 bg-tertiary text-white font-medium px-6 py-3 rounded-xl hover:opacity-80 transition-opacity"
+						className="inline-block mt-4 bg-tertiary text-white-100 font-medium px-6 py-3 rounded-xl hover:opacity-80 transition-opacity"
 					>
 						joshuavillartafigueroa@gmail.com
 					</a>
 				</section>
 
 				{/* Back link */}
-				<footer className="pt-4 border-t border-white/10">
-					<a href="/" className="text-secondary text-sm hover:text-white transition-colors">
+				<footer className="pt-4 border-t border-border-subtle">
+					<a href="/" className="text-secondary text-sm hover:text-white-100 transition-colors">
 						← Back to portfolio
 					</a>
 				</footer>

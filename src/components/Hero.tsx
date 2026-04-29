@@ -18,7 +18,7 @@ const Hero = () => {
 					<div className="w-1 sm:h-80 h-40 violet-gradient" />
 				</div>
 				<div className="">
-					<h1 className="hero-head-text text-white">
+					<h1 className="hero-head-text">
 						Hi, I'm <span className="text-violet">Joshua</span>
 					</h1>
 					<p className="hero-sub-text mt-2 text-white-100">

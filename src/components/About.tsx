@@ -21,7 +21,7 @@ const ServiceCard = ({ title, icon, index }: ServiceCardProps) => {
 			>
 				<div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex flex-col items-center justify-evenly">
 					<img src={icon} alt={title} className="w-16 h-16 object-contain" />
-					<h3 className="text-white text-[20px] text-center font-semibold">{title}</h3>
+					<h3 className="text-white-100 text-[20px] text-center font-semibold">{title}</h3>
 				</div>
 			</motion.div>
 		</Tilt>
