@@ -1,4 +1,4 @@
-import { amazon, ernests, google, homelink, maze_runner, netflix } from "../assets";
+import { amazon, ernests, google, homelink, maze_runner, revdash } from "../assets";
 import { Project } from "../models/project";
 
 export const projects: Project[] = [
@@ -103,20 +103,24 @@ export const projects: Project[] = [
 		source_code_link: "https://github.com/joshua-figueroa/Arduino-BLE-HomeLink",
 	},
 	{
-		name: "Netflix Clone",
+		name: "RevDash",
 		description:
-			"An iOS application that replicates the core functionalities of the Netflix streaming platform, providing users with a seamless and familiar experience to browse, search, and stream video content. This project demonstrates proficiency in iOS development using UIKit and related technologies.",
+			"A personal iOS driving dashboard app that connects to an OBD adapter to display real-time vehicle data and log trips.",
 		tags: [
 			{
 				name: "swiftui",
 				color: "orange-text-gradient",
 			},
 			{
-				name: "uikit",
+				name: "bluetooth",
 				color: "blue-text-gradient",
 			},
+			{
+				name: "obd-ii",
+				color: "green-text-gradient",
+			},
 		],
-		image: netflix,
-		source_code_link: "https://github.com/joshua-figueroa/netflix-clone-ios-uikit",
+		image: revdash,
+		published_link: "/revdash",
 	},
 ];

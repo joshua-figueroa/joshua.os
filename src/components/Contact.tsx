@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { ChangeEvent, FormEvent, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import emailjs from "@emailjs/browser";
@@ -8,13 +8,29 @@ import SectionWrapper from "./hoc/SectionWrapper";
 
 const Contact = () => {
 	const formRef = useRef<HTMLFormElement>(null);
+	const sectionRef = useRef<HTMLDivElement>(null);
 	const [form, setForm] = useState({
 		name: "",
 		email: "",
 		message: "",
 	});
-
 	const [loading, setLoading] = useState(false);
+	const [showEarth, setShowEarth] = useState(false);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setShowEarth(true);
+					observer.disconnect();
+				}
+			},
+			{ threshold: 0.1 }
+		);
+
+		if (sectionRef.current) observer.observe(sectionRef.current);
+		return () => observer.disconnect();
+	}, []);
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { target } = e;
@@ -64,7 +80,7 @@ const Contact = () => {
 	};
 
 	return (
-		<div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
+		<div ref={sectionRef} className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
 			<motion.div variants={slideIn("left", "tween", 0.2, 1)} className="flex-[0.75] bg-tertiary p-8 rounded-2xl">
 				<p className="section-sub-text">Get in touch</p>
 				<h3 className="section-head-text">Contact.</h3>
@@ -117,7 +133,7 @@ const Contact = () => {
 				variants={slideIn("right", "tween", 0.2, 1)}
 				className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
 			>
-				<EarthCanvas />
+				{showEarth && <EarthCanvas />}
 			</motion.div>
 		</div>
 	);

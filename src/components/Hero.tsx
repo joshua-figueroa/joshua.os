@@ -1,7 +1,15 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
+	const [showCanvas, setShowCanvas] = useState(false);
+
+	useEffect(() => {
+		const timer = setTimeout(() => setShowCanvas(true), 100);
+		return () => clearTimeout(timer);
+	}, []);
+
 	return (
 		<section className="relative w-full h-screen mx-auto">
 			<div className="padding-x absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5">
@@ -20,7 +28,7 @@ const Hero = () => {
 				</div>
 			</div>
 
-			<ComputersCanvas />
+			{showCanvas && <ComputersCanvas />}
 
 			<div className="absolute xs:bottom-10 bottom-24 w-full flex justify-center items-center">
 				<a href="#about">

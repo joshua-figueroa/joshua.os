@@ -37,7 +37,7 @@ import tripguide from "./tripguide.png";
 
 import amazon from "./projects/amazon.png";
 import google from "./projects/google.png";
-import netflix from "./projects/netflix.png";
+import revdash from "./projects/revdash.png";
 import ernests from "./projects/ernests.png";
 import homelink from "./projects/homelink.png";
 import maze_runner from "./projects/maze_runner.png";
@@ -81,5 +81,5 @@ export {
 	maze_runner,
 	google,
 	homelink,
-	netflix,
+	revdash,
 };
