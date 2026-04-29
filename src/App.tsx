@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { About, Contact, Hero, Navbar, StarsCanvas, Tech, Works } from "./components";
-import RevDash from "./pages/RevDash";
+import RevDashHome from "./pages/RevDashHome";
+import RevDashSupport from "./pages/RevDashSupport";
+import RevDashPrivacy from "./pages/RevDashPrivacy";
 
 const App = () => {
 	return (
@@ -24,7 +26,9 @@ const App = () => {
 						</div>
 					}
 				/>
-				<Route path="/revdash" element={<RevDash />} />
+				<Route path="/revdash" element={<RevDashHome />} />
+			<Route path="/revdash/support" element={<RevDashSupport />} />
+			<Route path="/revdash/privacy-policy" element={<RevDashPrivacy />} />
 			</Routes>
 		</BrowserRouter>
 	);
