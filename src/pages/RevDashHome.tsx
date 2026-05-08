@@ -83,7 +83,7 @@ const RevDashHome = () => {
 
 			{/* Screenshot carousel */}
 			<section className="pb-20 flex flex-col items-center gap-5">
-				<div className="flex items-center gap-4 w-full max-w-sm px-0">
+				<div className="flex items-center gap-4 w-full max-w-sm sm:max-w-lg px-0">
 					<button
 						onClick={() => emblaApi?.scrollPrev()}
 						className="hidden sm:flex flex-shrink-0 w-9 h-9 rounded-full bg-tertiary border border-border-subtle items-center justify-center text-secondary hover:text-white-100 transition-colors"
@@ -97,7 +97,7 @@ const RevDashHome = () => {
 					<div className="overflow-hidden flex-1" ref={emblaRef}>
 						<div className="flex">
 							{screenshots.map((s, i) => (
-								<div key={s.alt} className="flex-shrink-0 px-2" style={{ width: "75%" }}>
+								<div key={s.alt} className="flex-shrink-0 px-2 w-[75%] sm:w-[55%]">
 									<motion.img
 										src={s.src}
 										alt={s.alt}

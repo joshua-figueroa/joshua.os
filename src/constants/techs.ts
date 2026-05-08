@@ -12,6 +12,7 @@ import {
 	docker,
 	flutter,
 	swiftui,
+	arduino,
 } from "../assets";
 
 export const technologies = [
@@ -67,8 +68,8 @@ export const technologies = [
 		name: "SwiftUI",
 		icon: swiftui,
 	},
-	// {
-	// 	name: "Arduino",
-	// 	icon: arduino,
-	// },
+	{
+		name: "Arduino",
+		icon: arduino,
+	},
 ];

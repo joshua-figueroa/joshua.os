@@ -18,12 +18,19 @@ export default {
 			},
 			boxShadow: {
 				card: "0px 35px 120px -15px #0A0D15",
+				icon: "0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35)",
 			},
 			screens: {
 				xs: "450px",
 			},
-			backgroundImage: {
-				"hero-pattern": "url('/src/assets/herobg.png')",
+			borderRadius: {
+				squircle: "22.37%",
+				"ios-card": "24px",
+				"ios-lg": "34px",
+			},
+			backdropBlur: {
+				ios: "40px",
+				"ios-strong": "60px",
 			},
 		},
 	},

@@ -22,7 +22,6 @@ export const projects: Project[] = [
 		],
 		image: amazon,
 		source_code_link: "https://github.com/joshua-figueroa/amazon-clone",
-		published_link: "https://amazonclone.joshuafigueroa.dev/",
 	},
 	{
 		name: "Google Clone",
@@ -44,7 +43,7 @@ export const projects: Project[] = [
 		],
 		image: google,
 		source_code_link: "https://github.com/joshua-figueroa/google-clone",
-		published_link: "https://google-clone.joshuafigueroa.dev",
+		published_link: "https://google.joshuafigueroa.dev",
 	},
 	{
 		name: "Maze Runner",
