@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import revdash from "../assets/projects/revdash.png";
 import appStoreBadge from "../assets/app-store-badge.svg";
 import driveView from "../assets/projects/revdash/drive_view.png";
