@@ -35,6 +35,7 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import appStoreBadge from "./app-store-badge.svg";
 import amazon from "./projects/amazon.png";
 import google from "./projects/google.png";
 import revdash from "./projects/revdash.png";
@@ -77,6 +78,7 @@ export {
 	swiftui,
 	mysql,
 	nextjs,
+	appStoreBadge,
 	amazon,
 	ernests,
 	maze_runner,
