@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from "react";
-import { HiUser, HiArrowUp, HiCheckCircle, HiPhone, HiVideoCamera } from "react-icons/hi2";
+import {
+	HiUser,
+	HiArrowUp,
+	HiCheckCircle,
+	HiPhone,
+	HiVideoCamera,
+	HiExclamationCircle,
+} from "react-icons/hi2";
 import emailjs from "@emailjs/browser";
 
 const TYPING_BUBBLE_DELAY = 600;
@@ -8,6 +15,7 @@ const ContactApp = () => {
 	const [form, setForm] = useState({ name: "", email: "", message: "" });
 	const [loading, setLoading] = useState(false);
 	const [sent, setSent] = useState(false);
+	const [failed, setFailed] = useState(false);
 	const [showTyping, setShowTyping] = useState(true);
 	const [showSecondBubble, setShowSecondBubble] = useState(false);
 	const scrollRef = useRef<HTMLDivElement>(null);
@@ -22,16 +30,15 @@ const ContactApp = () => {
 
 	useEffect(() => {
 		scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-	}, [form.name, form.email, form.message, sent, showSecondBubble]);
+	}, [form.name, form.email, form.message, sent, failed, showSecondBubble]);
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value } = e.target;
 		setForm((f) => ({ ...f, [name]: value }));
 	};
 
-	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		if (!form.name || !form.email || !form.message) return;
+	const trySend = async () => {
+		setFailed(false);
 		setLoading(true);
 		try {
 			await emailjs.send(
@@ -49,10 +56,16 @@ const ContactApp = () => {
 			setSent(true);
 		} catch (err) {
 			console.error(err);
-			alert("Something went wrong. Please try again.");
+			setFailed(true);
 		} finally {
 			setLoading(false);
 		}
+	};
+
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		if (!form.name || !form.email || !form.message) return;
+		void trySend();
 	};
 
 	const canSend = form.name && form.email && form.message && !loading && !sent;
@@ -125,8 +138,21 @@ const ContactApp = () => {
 
 				{(form.name || form.email || form.message) && (
 					<>
-						<div className="flex justify-end">
-							<div className="bg-[#0B84FF] text-white rounded-[18px] rounded-br-[6px] px-3.5 py-2 max-w-[78%] text-[15px] whitespace-pre-wrap">
+						<div className="flex justify-end items-center gap-1.5">
+							{failed && (
+								<button
+									onClick={() => void trySend()}
+									className="flex-shrink-0"
+									aria-label="Try again"
+								>
+									<HiExclamationCircle className="text-red-500" size={18} />
+								</button>
+							)}
+							<div
+								className={`text-white rounded-[18px] rounded-br-[6px] px-3.5 py-2 max-w-[78%] text-[15px] whitespace-pre-wrap ${
+									failed ? "bg-[#0B84FF]/60" : "bg-[#0B84FF]"
+								}`}
+							>
 								{[
 									form.name && `Hi, I'm ${form.name}.`,
 									form.email,
@@ -140,6 +166,17 @@ const ContactApp = () => {
 							<div className="flex justify-end items-center gap-1 pr-1 pt-0.5">
 								<HiCheckCircle className="text-blue-400" size={14} />
 								<span className="text-[11px] text-secondary">Delivered</span>
+							</div>
+						)}
+						{failed && (
+							<div className="flex justify-end items-center gap-2 pr-1 pt-0.5">
+								<span className="text-[11px] text-red-500 font-medium">Not Delivered</span>
+								<button
+									onClick={() => void trySend()}
+									className="text-[11px] text-blue-400 font-medium hover:underline"
+								>
+									Try Again
+								</button>
 							</div>
 						)}
 					</>

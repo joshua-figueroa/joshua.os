@@ -7,6 +7,10 @@ app = '3d-portfolio'
 primary_region = 'sin'
 
 [build]
+  [build.args]
+    VITE_APP_EMAILJS_SERVICE_ID = "service_gjj8yeu"
+    VITE_APP_EMAILJS_TEMPLATE_ID = "template_infsm8j"
+    VITE_APP_EMAILJS_PUBLIC_KEY = "L5za9Zb6wYS2RqMTx"
 
 [http_service]
   internal_port = 8080
