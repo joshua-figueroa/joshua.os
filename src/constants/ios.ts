@@ -83,7 +83,7 @@ export const APPS: AppDef[] = [
 		name: "Buff",
 		kind: "route",
 		url: "/buff",
-		gradient: "linear-gradient(135deg, #2847A0 0%, #C08A5A 100%)",
+		gradient: "linear-gradient(135deg, #FDE4CF 0%, #E07A5F 100%)",
 		image: buffIcon,
 	},
 ];
