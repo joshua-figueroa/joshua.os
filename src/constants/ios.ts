@@ -2,6 +2,7 @@ import revdashIcon from "../assets/projects/revdash.png";
 import buffIcon from "../assets/projects/buff.png";
 import githubLogo from "../assets/github-white.svg";
 import linkedinLogo from "../assets/linkedin-white.svg";
+import safariIcon from "../assets/safari.webp";
 
 export type AppId = "about" | "projects" | "tech" | "contact" | "safari" | "github" | "linkedin" | "revdash" | "buff";
 
@@ -54,6 +55,7 @@ export const APPS: AppDef[] = [
 		kind: "external",
 		url: "https://google.joshuafigueroa.dev",
 		gradient: "linear-gradient(135deg, #FFFFFF 0%, #DFE8F2 100%)",
+		image: safariIcon,
 	},
 	{
 		id: "github",

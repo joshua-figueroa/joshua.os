@@ -1,4 +1,4 @@
-import { motion, type PanInfo } from "framer-motion";
+import { motion, useDragControls, type PanInfo } from "framer-motion";
 import type { ReactNode } from "react";
 import type { AppDef } from "../../constants/ios";
 import type { AppContext } from "./AppIcon";
@@ -11,6 +11,8 @@ type Props = {
 };
 
 const AppFrame = ({ app, context, onClose, children }: Props) => {
+	const dragControls = useDragControls();
+
 	const handleDragEnd = (_: unknown, info: PanInfo) => {
 		if (info.offset.y > 100 || info.velocity.y > 400) onClose();
 	};
@@ -24,16 +26,22 @@ const AppFrame = ({ app, context, onClose, children }: Props) => {
 		>
 			<motion.div
 				drag="y"
+				dragControls={dragControls}
+				dragListener={false}
 				dragConstraints={{ top: 0, bottom: 0 }}
 				dragElastic={{ top: 0, bottom: 0.4 }}
 				onDragEnd={handleDragEnd}
 				className="w-full h-full flex flex-col"
 			>
-				{/* Drag-handle bar */}
-				<div className="flex-shrink-0 flex items-center justify-between px-4 pt-3 pb-1.5 select-none">
+				{/* Drag-handle bar — only this area initiates the dismiss gesture */}
+				<div
+					onPointerDown={(e) => dragControls.start(e)}
+					className="flex-shrink-0 flex items-center justify-between px-4 pt-3 pb-1.5 select-none touch-none cursor-grab active:cursor-grabbing"
+				>
 					<div className="w-10" />
 					<div className="w-9 h-1.5 rounded-full bg-white/25" />
 					<button
+						onPointerDown={(e) => e.stopPropagation()}
 						onClick={onClose}
 						className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/15 flex items-center justify-center transition-colors"
 						aria-label="Close"
