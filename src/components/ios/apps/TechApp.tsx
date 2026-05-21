@@ -7,15 +7,19 @@ const groups = [
 	},
 	{
 		title: "Mobile",
-		items: ["SwiftUI", "Flutter"],
+		items: ["SwiftUI", "Jetpack Compose", "React Native", "Flutter"],
 	},
 	{
-		title: "Backend & Infra",
-		items: ["Node JS", "Golang", "Springboot", "Firebase", "MySQL", "Docker"],
+		title: "Backend",
+		items: ["Node JS", "Golang", "Springboot", "MySQL"],
+	},
+	{
+		title: "Infra",
+		items: ["Firebase", "AWS", "Azure", "Docker", "Kubernetes", "Terraform"],
 	},
 	{
 		title: "Hardware",
-		items: ["Arduino"],
+		items: ["Arduino", "Raspberry Pi"],
 	},
 ];
 

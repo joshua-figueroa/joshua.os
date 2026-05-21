@@ -17,6 +17,12 @@ import swiftui from "./tech/swiftui.png";
 import mysql from "./tech/mysql.png";
 import nextjs from "./tech/nextjs.png";
 import arduino from "./tech/arduino.png";
+import aws from "./tech/aws.png";
+import azure from "./tech/azure.png";
+import terraform from "./tech/terraform.png";
+import jetpackcompose from "./tech/jetpackcompose.png";
+import kubernetes from "./tech/kubernetes.png";
+import raspberrypi from "./tech/raspberrypi.png";
 
 import appStoreBadge from "./app-store-badge.svg";
 import amazon from "./projects/amazon.png";
@@ -47,6 +53,12 @@ export {
 	mysql,
 	nextjs,
 	arduino,
+	aws,
+	azure,
+	terraform,
+	jetpackcompose,
+	kubernetes,
+	raspberrypi,
 	appStoreBadge,
 	amazon,
 	ernests,

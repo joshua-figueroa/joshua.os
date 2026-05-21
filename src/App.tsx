@@ -4,6 +4,7 @@ import RevDashHome from "./pages/RevDashHome";
 import RevDashSupport from "./pages/RevDashSupport";
 import RevDashPrivacy from "./pages/RevDashPrivacy";
 import BuffHome from "./pages/BuffHome";
+import TechStack from "./pages/TechStack";
 
 const App = () => {
 	return (
@@ -14,6 +15,7 @@ const App = () => {
 				<Route path="/revdash/support" element={<RevDashSupport />} />
 				<Route path="/revdash/privacy-policy" element={<RevDashPrivacy />} />
 				<Route path="/buff" element={<BuffHome />} />
+				<Route path="/tech-stack" element={<TechStack />} />
 			</Routes>
 		</BrowserRouter>
 	);

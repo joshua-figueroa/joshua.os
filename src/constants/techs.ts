@@ -13,6 +13,12 @@ import {
 	flutter,
 	swiftui,
 	arduino,
+	aws,
+	azure,
+	terraform,
+	jetpackcompose,
+	kubernetes,
+	raspberrypi,
 } from "../assets";
 
 export const technologies = [
@@ -41,7 +47,7 @@ export const technologies = [
 		icon: firebase,
 	},
 	{
-		name: "Node JS",
+		name: "NodeJS",
 		icon: nodejs,
 	},
 	{
@@ -71,5 +77,33 @@ export const technologies = [
 	{
 		name: "Arduino",
 		icon: arduino,
+	},
+	{
+		name: "AWS",
+		icon: aws,
+	},
+	{
+		name: "Azure",
+		icon: azure,
+	},
+	{
+		name: "Terraform",
+		icon: terraform,
+	},
+	{
+		name: "React Native",
+		icon: reactjs,
+	},
+	{
+		name: "Jetpack Compose",
+		icon: jetpackcompose,
+	},
+	{
+		name: "Kubernetes",
+		icon: kubernetes,
+	},
+	{
+		name: "Raspberry Pi",
+		icon: raspberrypi,
 	},
 ];

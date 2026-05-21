@@ -36,7 +36,8 @@ export const APPS: AppDef[] = [
 	{
 		id: "tech",
 		name: "Tech Stack",
-		kind: "modal",
+		kind: "route",
+		url: "/tech-stack",
 		gradient: "linear-gradient(135deg, #6E37C2 0%, #B673FF 100%)",
 		emoji: "🧰",
 	},
