@@ -1,16 +1,9 @@
 import revdashIcon from "../assets/projects/revdash.png";
+import buffIcon from "../assets/projects/buff.png";
 import githubLogo from "../assets/github-white.svg";
 import linkedinLogo from "../assets/linkedin-white.svg";
 
-export type AppId =
-	| "about"
-	| "projects"
-	| "tech"
-	| "contact"
-	| "safari"
-	| "github"
-	| "linkedin"
-	| "revdash";
+export type AppId = "about" | "projects" | "tech" | "contact" | "safari" | "github" | "linkedin" | "revdash" | "buff";
 
 export type AppKind = "modal" | "external" | "route";
 
@@ -85,10 +78,18 @@ export const APPS: AppDef[] = [
 		gradient: "linear-gradient(135deg, #2847A0 0%, #C08A5A 100%)",
 		image: revdashIcon,
 	},
+	{
+		id: "buff",
+		name: "Buff",
+		kind: "route",
+		url: "/buff",
+		gradient: "linear-gradient(135deg, #2847A0 0%, #C08A5A 100%)",
+		image: buffIcon,
+	},
 ];
 
 export const DOCK_APPS: AppId[] = ["about", "projects", "contact", "safari"];
-export const GRID_APPS: AppId[] = ["tech", "github", "linkedin", "revdash"];
+export const GRID_APPS: AppId[] = ["tech", "github", "linkedin", "revdash", "buff"];
 
 export const getApp = (id: AppId): AppDef => {
 	const app = APPS.find((a) => a.id === id);

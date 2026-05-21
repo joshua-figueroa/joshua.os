@@ -23,6 +23,7 @@ import amazon from "./projects/amazon.png";
 import google from "./projects/google.png";
 import revdash from "./projects/revdash.png";
 import revdash_preview from "./projects/revdash_preview.png";
+import buff from "./projects/buff.png";
 import ernests from "./projects/ernests.png";
 import homelink from "./projects/homelink.png";
 import maze_runner from "./projects/maze_runner.png";
@@ -54,4 +55,5 @@ export {
 	homelink,
 	revdash,
 	revdash_preview,
+	buff,
 };

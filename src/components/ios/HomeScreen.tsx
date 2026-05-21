@@ -79,12 +79,13 @@ const HomeScreen = ({ onOpen, onLock, openId, openContext }: Props) => {
 					</div>
 				) : (
 					<div className="flex-1 flex flex-col px-6 pt-2 pb-3">
-						{/* Widgets — 2x2 grid */}
+						{/* Widgets — 2x2 squares on top, 2x1 wide pair below */}
 						<div className="grid grid-cols-2 gap-3 mb-6">
 							<ClockWidget />
-							<AvailabilityWidget />
 							<NowBuildingWidget onOpen={() => onOpen("revdash", "grid")} />
+							<AvailabilityWidget wide />
 							<ControlsWidget
+								wide
 								fullscreenActive={fullscreen.active}
 								onLock={onLock}
 								onToggleFullscreen={handleToggleFullscreen}

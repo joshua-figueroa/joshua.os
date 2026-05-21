@@ -42,9 +42,10 @@ const AppIcon = ({
 					layoutId={`app-icon-${context}-${app.id}`}
 					whileTap={{ scale: 0.92 }}
 					transition={{ type: "spring", stiffness: 400, damping: 25 }}
-					className="squircle icon-shadow flex items-center justify-center text-2xl overflow-hidden w-full h-full"
+					className="icon-shadow flex items-center justify-center text-2xl overflow-hidden w-full h-full"
 					style={{
 						background: app.gradient,
+						borderRadius: size * 0.2237,
 					}}
 				>
 					{iconOverride ? (
