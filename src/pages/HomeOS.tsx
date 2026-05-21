@@ -1,19 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, LayoutGroup } from "framer-motion";
 import HomeScreen from "../components/ios/HomeScreen";
 import LockScreen from "../components/ios/LockScreen";
 import AppFrame from "../components/ios/AppFrame";
 import type { AppContext } from "../components/ios/AppIcon";
-import { getApp, type AppId } from "../constants/ios";
+import { APPS, getApp, type AppId } from "../constants/ios";
 import AboutApp from "../components/ios/apps/AboutApp";
 import ProjectsApp from "../components/ios/apps/ProjectsApp";
 import TechApp from "../components/ios/apps/TechApp";
 import ContactApp from "../components/ios/apps/ContactApp";
 
 const UNLOCK_KEY = "joshua-portfolio-unlocked";
+const OPEN_KEY = "joshua-portfolio-open-app";
 
 type OpenState = { id: AppId; context: AppContext } | null;
+
+const readStoredOpen = (): OpenState => {
+	if (typeof window === "undefined") return null;
+	try {
+		const raw = window.localStorage.getItem(OPEN_KEY);
+		if (!raw) return null;
+		const parsed = JSON.parse(raw) as { id?: string; context?: string };
+		if (!parsed.id || !parsed.context) return null;
+		if (parsed.context !== "grid" && parsed.context !== "dock") return null;
+		const app = APPS.find((a) => a.id === parsed.id);
+		if (!app || app.kind !== "modal") return null;
+		return { id: app.id, context: parsed.context as AppContext };
+	} catch {
+		return null;
+	}
+};
 
 const renderApp = (id: AppId) => {
 	switch (id) {
@@ -36,7 +53,16 @@ const HomeOS = () => {
 		if (typeof window === "undefined") return true;
 		return sessionStorage.getItem(UNLOCK_KEY) !== "1";
 	});
-	const [open, setOpen] = useState<OpenState>(null);
+	const [open, setOpen] = useState<OpenState>(readStoredOpen);
+
+	useEffect(() => {
+		try {
+			if (open === null) window.localStorage.removeItem(OPEN_KEY);
+			else window.localStorage.setItem(OPEN_KEY, JSON.stringify(open));
+		} catch {
+			/* private mode / storage unavailable */
+		}
+	}, [open]);
 
 	const handleUnlock = () => {
 		sessionStorage.setItem(UNLOCK_KEY, "1");

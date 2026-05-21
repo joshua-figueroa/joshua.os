@@ -1,30 +1,37 @@
 import { services } from "../../../constants/service";
+import avatar from "../../../assets/joshua.png";
+
+const ChevronRight = () => (
+	<svg width="9" height="14" viewBox="0 0 9 14" className="text-white/30 flex-shrink-0">
+		<path
+			d="M1 1L7 7L1 13"
+			stroke="currentColor"
+			strokeWidth="1.5"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			fill="none"
+		/>
+	</svg>
+);
 
 const AboutApp = () => {
 	return (
-		<div className="px-6 pb-20 text-white">
-			<div className="mb-8">
-				<h1 className="text-[34px] font-bold tracking-tight">About</h1>
-				<p className="text-secondary text-[15px] mt-1">Pinned</p>
-			</div>
-
-			<div className="bg-tertiary/60 rounded-ios-card p-5 mb-6 border border-border-subtle">
-				<div className="text-[12px] text-secondary uppercase tracking-wider mb-3">Joshua Figueroa</div>
-				<h2 className="text-[20px] font-semibold mb-3">
-					Software engineer building thoughtful products across web, mobile, and embedded.
-				</h2>
-				<p className="text-secondary text-[15px] leading-relaxed">
-					I'm a developer who loves shipping. Whether it's a SwiftUI app talking to a vehicle ECU, a
-					full-stack React product, or a Flutter mobile build, I care about the small details that turn
-					working software into something people actually enjoy using.
-				</p>
-				<p className="text-secondary text-[15px] leading-relaxed mt-3">
-					Currently independent — working out of Manila on RevDash and consulting projects.
+		<div className="px-5 pb-20 pt-2 text-white max-w-2xl mx-auto">
+			{/* Hero card — icon, title, description */}
+			<div className="bg-tertiary/60 rounded-ios-card p-5 md:p-8 mb-6 border border-border-subtle md:flex md:flex-col md:items-center md:text-center">
+				<div className="w-16 h-16 md:w-20 md:h-20 rounded-[18px] overflow-hidden mb-4 select-none">
+					<img src={avatar} alt="Joshua Figueroa" className="w-full h-full object-cover" draggable={false} />
+				</div>
+				<h2 className="text-[28px] font-bold tracking-tight leading-tight mb-2">Joshua Figueroa</h2>
+				<p className="text-secondary text-[15px] leading-relaxed md:max-w-md">
+					Software engineer building thoughtful products across web, mobile, and embedded. I care about the
+					small details that turn working software into something people actually enjoy using.
 				</p>
 			</div>
 
+			{/* What I do — list with icons, labels, chevrons */}
 			<div>
-				<div className="text-[13px] text-secondary uppercase tracking-wider mb-3 px-2">What I do</div>
+				<div className="text-[13px] text-secondary uppercase tracking-wider mb-2 px-4">What I do</div>
 				<div className="bg-tertiary/60 rounded-ios-card overflow-hidden border border-border-subtle">
 					{services.map((s, i) => (
 						<div
@@ -33,10 +40,11 @@ const AboutApp = () => {
 								i !== services.length - 1 ? "border-b border-border-subtle" : ""
 							}`}
 						>
-							<div className="w-10 h-10 rounded-[12px] bg-violet/20 flex items-center justify-center flex-shrink-0">
-								<img src={s.icon} alt={s.title} className="w-6 h-6 object-contain" />
+							<div className="w-9 h-9 rounded-[10px] bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+								<img src={s.icon} alt={s.title} className="w-5 h-5 object-contain" />
 							</div>
-							<span className="text-white text-[16px] font-medium">{s.title}</span>
+							<span className="text-white text-[16px] flex-1">{s.title}</span>
+							<ChevronRight />
 						</div>
 					))}
 				</div>
