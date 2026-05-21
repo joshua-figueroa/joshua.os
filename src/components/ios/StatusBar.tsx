@@ -12,6 +12,13 @@ const StatusBar = ({ dark = false }: Props) => {
 	const device = useDeviceType();
 	const fullscreen = useFullscreen();
 	const isPhone = device === "phone";
+
+	// On non-standalone iPhone Safari the real iOS status bar is already visible
+	// above our viewport — suppress the simulated one to avoid doubling.
+	if (fullscreen.needsHomeScreen) {
+		return <div className="h-3" />;
+	}
+
 	const showDynamicIsland = isPhone && !fullscreen.active;
 	const color = dark ? "text-black" : "text-white";
 
@@ -19,7 +26,9 @@ const StatusBar = ({ dark = false }: Props) => {
 		<div className={`relative w-full h-11 flex items-center justify-between px-7 select-none ${color}`}>
 			<span className="font-semibold text-[15px] tracking-tight w-16">{formatLockTime(now)}</span>
 
-			{showDynamicIsland && <div className="absolute left-1/2 -translate-x-1/2 top-2 w-28 h-7 rounded-full bg-black" />}
+			{showDynamicIsland && (
+				<div className="absolute left-1/2 -translate-x-1/2 top-2 w-28 h-7 rounded-full bg-black" />
+			)}
 
 			<div className="flex items-center gap-1.5 w-16 justify-end">
 				<IoCellular size={14} />

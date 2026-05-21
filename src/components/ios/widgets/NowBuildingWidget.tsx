@@ -16,7 +16,7 @@ const NowBuildingWidget = ({ onOpen }: Props) => {
 
 				<div className="leading-tight">
 					<div className="text-white font-semibold text-[16px]">RevDash</div>
-					<div className="text-white/65 text-[11px]">iOS · OBD-II</div>
+					<div className="text-white/65 text-[11px]">OBD-II Dashboard</div>
 				</div>
 
 				<div className="flex items-center gap-1.5">
