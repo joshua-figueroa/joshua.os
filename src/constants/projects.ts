@@ -1,7 +1,25 @@
-import { amazon, ernests, google, homelink, maze_runner, revdash_preview } from "../assets";
+import { amazon, buff_preview, ernests, google, homelink, maze_runner, revdash_preview } from "../assets";
 import { Project } from "../models/project";
 
 export const projects: Project[] = [
+	{
+		name: "Buff",
+		description:
+			"A tiny macOS menu bar utility that blocks all keyboard and trackpad input on a timer so you can clean your screen and keys without triggering a single thing. Auto-releases when the countdown hits zero.",
+		tags: [
+			{
+				name: "swift",
+				color: "orange-text-gradient",
+			},
+			{
+				name: "macos",
+				color: "blue-text-gradient",
+			},
+		],
+		image: buff_preview,
+		published_link: "/buff",
+		source_code_link: "https://github.com/joshua-figueroa/Buff",
+	},
 	{
 		name: "Amazon Clone",
 		description:

@@ -19,7 +19,7 @@ const Dock = ({ onOpen, iconSize = 60, openId, openContext }: Props) => {
 					size={iconSize}
 					showLabel={false}
 					hidden={openId === id && openContext === "dock"}
-					badge={id === "projects" ? 6 : undefined}
+					badge={id === "projects" ? 7 : undefined}
 					onClick={() => onOpen(id, "dock")}
 				/>
 			))}
