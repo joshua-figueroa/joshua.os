@@ -1,6 +1,7 @@
 import cn from "classnames";
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { usePageMeta } from "../hooks/usePageMeta";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import revdash from "../assets/projects/revdash.png";
@@ -112,6 +113,14 @@ const CarouselArrow = ({ direction, onClick }: { direction: "prev" | "next"; onC
 );
 
 const RevDashHome = () => {
+	usePageMeta({
+		title: "RevDash — OBD-II Dashboard for Your Car",
+		description:
+			"Real-time OBD-II data on your phone. Monitor speed, RPM, temperature, engine diagnostics, and more. iOS now, Android coming soon.",
+		url: "https://joshuafigueroa.dev/revdash",
+		image: "https://joshuafigueroa.dev/revdash-icon.png",
+	});
+
 	const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center", loop: true });
 	const [selectedIndex, setSelectedIndex] = useState(0);
 

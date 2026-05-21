@@ -1,6 +1,7 @@
 import cn from "classnames";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { usePageMeta } from "../hooks/usePageMeta";
 import buffIcon from "../assets/projects/buff.png";
 
 const BUFF_CORAL = "#E07A5F";
@@ -105,6 +106,14 @@ const SpecPill = ({ children }: { children: React.ReactNode }) => (
 );
 
 const BuffHome = () => {
+	usePageMeta({
+		title: "Buff — Block Input. Wipe Freely.",
+		description:
+			"A tiny macOS menu bar app that blocks all keyboard and trackpad input on a timer so you can clean your screen and keys without triggering a thing.",
+		url: "https://joshuafigueroa.dev/buff",
+		image: "https://joshuafigueroa.dev/buff-icon.png",
+	});
+
 	return (
 		<div className="min-h-screen bg-primary text-white-100" style={{ overflowX: "clip" }}>
 			{/* ─────────────────── Nav ─────────────────── */}
