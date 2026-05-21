@@ -73,11 +73,11 @@ export const projects: Project[] = [
 			"Web-based platform that allows users to explore, and book their stay at Ernest Place Boracay, providing a convenient and informative solution for planning their visit to this premium accommodation.",
 		tags: [
 			{
-				name: "react",
+				name: "nextjs",
 				color: "blue-text-gradient",
 			},
 			{
-				name: "scss",
+				name: "tailwindcss",
 				color: "pink-text-gradient",
 			},
 		],
@@ -111,12 +111,12 @@ export const projects: Project[] = [
 				color: "orange-text-gradient",
 			},
 			{
-				name: "bluetooth",
-				color: "blue-text-gradient",
+				name: "uikit",
+				color: "green-text-gradient",
 			},
 			{
-				name: "obd-ii",
-				color: "green-text-gradient",
+				name: "bluetooth",
+				color: "blue-text-gradient",
 			},
 		],
 		image: revdash_preview,

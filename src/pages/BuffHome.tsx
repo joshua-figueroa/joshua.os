@@ -349,7 +349,7 @@ const BuffHome = () => {
 						>
 							Ready to wipe?
 						</h2>
-						<p className="text-secondary mt-2 text-sm">Free · macOS 15+ · 1.9 MB · MIT licensed</p>
+						<p className="text-secondary mt-2 text-sm">Free · macOS 15+ · 2.1 MB · MIT licensed</p>
 					</div>
 					<a
 						href="/Buff.dmg"
