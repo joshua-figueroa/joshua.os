@@ -8,7 +8,7 @@ type Props = {
 const AvailabilityWidget = ({ wide = false, className = "" }: Props) => {
 	if (wide) {
 		return (
-			<Widget size="wide" className={className}>
+			<Widget size="wide" className={`${className} py-4 px-5`}>
 				<div className="flex flex-col justify-between flex-1">
 					<div className="flex items-center gap-1.5">
 						<span className="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0" />

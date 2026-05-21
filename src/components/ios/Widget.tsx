@@ -20,7 +20,7 @@ const Widget = ({ size = "md", className = "", onClick, children }: Props) => {
 				className={cn(
 					"glass-strong rounded-ios-lg p-3 w-full aspect-[2/1] overflow-hidden flex flex-col",
 					interactive,
-					className,
+					className
 				)}
 			>
 				{children}

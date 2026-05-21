@@ -18,7 +18,7 @@ const ProjectsApp = () => {
 					<button
 						key={p.name}
 						onClick={() => setOpenIdx(i)}
-						className="bg-tertiary/60 rounded-ios-card overflow-hidden border border-border-subtle text-left hover:bg-tertiary/80 transition-colors"
+						className="bg-tertiary/60 rounded-ios-card overflow-hidden border border-border-subtle text-left hover:bg-tertiary/80 hover:border-white/30 transition-all duration-200"
 					>
 						<div className="aspect-[4/3] overflow-hidden">
 							<img src={p.image} alt={p.name} className="w-full h-full object-cover" />

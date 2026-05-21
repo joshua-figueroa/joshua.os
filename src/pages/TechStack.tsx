@@ -1,4 +1,4 @@
-import { useState, type ComponentType } from "react";
+import { type ComponentType } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import cn from "classnames";
@@ -64,30 +64,7 @@ const categories: Category[] = [
 ];
 
 const STORAGE_KEY = "tech-stack-section";
-
-const useStoredSection = () => {
-	const [id, setId] = useState<string>(() => {
-		if (typeof window === "undefined") return categories[0].id;
-		try {
-			const stored = window.localStorage.getItem(STORAGE_KEY);
-			if (stored && categories.some((c) => c.id === stored)) return stored;
-		} catch {
-			/* private mode / storage unavailable */
-		}
-		return categories[0].id;
-	});
-
-	const update = (next: string) => {
-		setId(next);
-		try {
-			window.localStorage.setItem(STORAGE_KEY, next);
-		} catch {
-			/* ignore */
-		}
-	};
-
-	return [id, update] as const;
-};
+const categoryIds = categories.map((c) => c.id);
 
 const TrafficLight = ({ color, onClick, ariaLabel }: { color: string; onClick?: () => void; ariaLabel?: string }) => (
 	<button
@@ -99,7 +76,7 @@ const TrafficLight = ({ color, onClick, ariaLabel }: { color: string; onClick?: 
 );
 
 const DesktopFinder = ({ onClose }: { onClose: () => void }) => {
-	const [selectedId, setSelectedId] = useStoredSection();
+	const [selectedId, setSelectedId] = useStoredSection(STORAGE_KEY, categoryIds, categories[0].id);
 	const current = categories.find((c) => c.id === selectedId) ?? categories[0];
 	const items = technologies.filter((t) => current.items.includes(t.name));
 
@@ -233,7 +210,7 @@ const techCategoryMap: Record<string, string> = (() => {
 })();
 
 const MobileFiles = ({ onClose }: { onClose: () => void }) => {
-	const [activeId, setActiveId] = useStoredSection();
+	const [activeId, setActiveId] = useStoredSection(STORAGE_KEY, categoryIds, categories[0].id);
 	const active = categories.find((c) => c.id === activeId) ?? categories[0];
 	const items = technologies.filter((t) => active.items.includes(t.name));
 
