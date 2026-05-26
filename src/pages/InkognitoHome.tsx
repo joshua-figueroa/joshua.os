@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { usePageMeta } from "../hooks/usePageMeta";
 import inkognitoIcon from "../assets/projects/inkognito.png";
 
-const TEAL = "#0D9E85";
+const NAVY = "#243047";
 
 const fadeUp = {
 	hidden: { opacity: 0, y: 20 },
@@ -127,20 +127,14 @@ const InkognitoHome = () => {
 					Home
 				</Link>
 
-				<button
-					disabled
-					aria-disabled="true"
-					title="Coming soon"
-					className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold cursor-not-allowed select-none"
-					style={{
-						background: "rgba(13,158,133,0.08)",
-						color: "rgba(13,158,133,0.4)",
-						border: "1px solid rgba(13,158,133,0.15)",
-					}}
+				<a
+					href="/Inkognito.dmg"
+					download="Inkognito.dmg"
+					className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white text-black text-sm font-semibold hover:opacity-85 active:scale-[0.97] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
 				>
 					<IconDownload />
 					Download
-				</button>
+				</a>
 			</header>
 
 			{/* ─────────────────── Marquee Hero ─────────────────── */}
@@ -157,7 +151,7 @@ const InkognitoHome = () => {
 							className="absolute rounded-full pointer-events-none"
 							style={{
 								inset: "-35%",
-								background: `radial-gradient(circle, ${TEAL}28 0%, transparent 65%)`,
+								background: `radial-gradient(circle, ${NAVY}28 0%, transparent 65%)`,
 								filter: "blur(28px)",
 							}}
 							aria-hidden
@@ -177,7 +171,7 @@ const InkognitoHome = () => {
 				{/* Label */}
 				<motion.p
 					className="text-xs font-bold uppercase tracking-widest mb-5"
-					style={{ color: TEAL }}
+					style={{ color: NAVY }}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.4, delay: 0.1 }}
@@ -197,7 +191,7 @@ const InkognitoHome = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.55, delay: 0.14 }}
 				>
-					Your printer's <span style={{ color: TEAL }}>secret identity.</span>
+					Your printer's <span style={{ color: NAVY }}>secret identity.</span>
 				</motion.h1>
 
 				{/* Subhead */}
@@ -218,27 +212,14 @@ const InkognitoHome = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.32 }}
 				>
-					<div className="relative">
-						<span
-							className="absolute -top-6 left-1/2 -translate-x-1/2 text-[11px] font-bold uppercase tracking-widest whitespace-nowrap"
-							style={{ color: TEAL }}
-						>
-							Coming soon
-						</span>
-						<button
-							disabled
-							aria-disabled="true"
-							className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-[15px] font-semibold cursor-not-allowed select-none"
-							style={{
-								background: "rgba(13,158,133,0.09)",
-								color: "rgba(13,158,133,0.42)",
-								border: "1px solid rgba(13,158,133,0.18)",
-							}}
-						>
-							<IconDownload />
-							Download for macOS
-						</button>
-					</div>
+					<a
+						href="/Inkognito.dmg"
+						download="Inkognito.dmg"
+						className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-white text-black font-semibold text-[15px] hover:opacity-90 active:scale-[0.97] transition-all duration-150 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+					>
+						<IconDownload />
+						Download for macOS
+					</a>
 
 					<div className="flex flex-wrap justify-center gap-2">
 						{["macOS 14+", "Free"].map((tag) => (
@@ -274,7 +255,7 @@ const InkognitoHome = () => {
 						>
 							<span
 								className="font-black leading-none select-none"
-								style={{ fontSize: "clamp(2.5rem, 8vw, 3.75rem)", color: `${TEAL}1A` }}
+								style={{ fontSize: "clamp(2.5rem, 8vw, 3.75rem)", color: "rgba(240,238,232,0.18)" }}
 								aria-hidden
 							>
 								{s.n}
@@ -325,9 +306,9 @@ const InkognitoHome = () => {
 				<motion.div
 					className="rounded-3xl border p-8 lg:px-14 lg:py-14 flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-between lg:text-left gap-8"
 					style={{
-						borderColor: "rgba(13,158,133,0.2)",
+						borderColor: "rgba(36,48,71,0.5)",
 						background:
-							"radial-gradient(ellipse at 25% 60%, rgba(13,158,133,0.06) 0%, transparent 60%), var(--color-black-100)",
+							"radial-gradient(ellipse at 25% 60%, rgba(36,48,71,0.35) 0%, transparent 60%), var(--color-black-100)",
 					}}
 					variants={fadeUp}
 					custom={0}
@@ -346,29 +327,18 @@ const InkognitoHome = () => {
 						>
 							Ready to print?
 						</h2>
-						<p className="text-secondary mt-2 text-sm">Free · macOS 14+ · Coming soon</p>
+						<p className="text-secondary mt-2 text-sm">Free · macOS 14+</p>
 					</div>
 
-					<div className="flex-shrink-0 flex flex-col items-center lg:items-end gap-2">
-						<button
-							disabled
-							aria-disabled="true"
-							className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-[15px] font-bold cursor-not-allowed select-none"
-							style={{
-								background: "rgba(13,158,133,0.08)",
-								color: "rgba(13,158,133,0.38)",
-								border: "1px solid rgba(13,158,133,0.16)",
-							}}
+					<div className="flex-shrink-0">
+						<a
+							href="/Inkognito.dmg"
+							download="Inkognito.dmg"
+							className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-bold text-[15px] hover:opacity-90 active:scale-[0.97] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
 						>
 							<IconDownload />
 							Download Inkognito.dmg
-						</button>
-						<span
-							className="text-[11px] font-semibold uppercase tracking-wider"
-							style={{ color: "rgba(13,158,133,0.5)" }}
-						>
-							DMG available soon
-						</span>
+						</a>
 					</div>
 				</motion.div>
 			</section>

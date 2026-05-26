@@ -18,7 +18,6 @@ export const projects: Project[] = [
 		],
 		image: inkognito_preview,
 		published_link: "/inkognito",
-		source_code_link: "https://github.com/joshua-figueroa/Inkognito",
 	},
 	{
 		name: "Buff",
