@@ -4,6 +4,7 @@ import { usePageMeta } from "../hooks/usePageMeta";
 import inkognitoIcon from "../assets/projects/inkognito.png";
 
 const NAVY = "#243047";
+const NAVY_TEXT = "#7A9CC8";
 
 const fadeUp = {
 	hidden: { opacity: 0, y: 20 },
@@ -171,7 +172,7 @@ const InkognitoHome = () => {
 				{/* Label */}
 				<motion.p
 					className="text-xs font-bold uppercase tracking-widest mb-5"
-					style={{ color: NAVY }}
+					style={{ color: NAVY_TEXT }}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.4, delay: 0.1 }}
@@ -191,7 +192,7 @@ const InkognitoHome = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.55, delay: 0.14 }}
 				>
-					Your printer's <span style={{ color: NAVY }}>secret identity.</span>
+					Your printer's <span style={{ color: NAVY_TEXT }}>secret identity.</span>
 				</motion.h1>
 
 				{/* Subhead */}
