@@ -1,11 +1,25 @@
 import revdashIcon from "../assets/projects/revdash.png";
 import buffIcon from "../assets/projects/buff.png";
 import inkognitoIcon from "../assets/projects/inkognito.png";
+import contactsIcon from "../assets/contacts.png";
+import imessageIcon from "../assets/imessage.svg";
+import filesIcon from "../assets/files.png";
+import finderIcon from "../assets/finder.png";
 import githubLogo from "../assets/github-white.svg";
 import linkedinLogo from "../assets/linkedin-white.svg";
-import safariIcon from "../assets/safari.webp";
+import safariIcon from "../assets/safari.png";
 
-export type AppId = "about" | "projects" | "tech" | "contact" | "safari" | "github" | "linkedin" | "revdash" | "buff" | "inkognito";
+export type AppId =
+	| "about"
+	| "projects"
+	| "tech"
+	| "contact"
+	| "safari"
+	| "github"
+	| "linkedin"
+	| "revdash"
+	| "buff"
+	| "inkognito";
 
 export type AppKind = "modal" | "external" | "route";
 
@@ -25,30 +39,30 @@ export const APPS: AppDef[] = [
 		id: "about",
 		name: "About",
 		kind: "modal",
-		gradient: "linear-gradient(135deg, #2847A0 0%, #6583CC 100%)",
-		emoji: "👋",
+		gradient: "linear-gradient(135deg, #FFFFFF 0%, #E8EDF2 100%)",
+		image: contactsIcon,
 	},
 	{
 		id: "projects",
 		name: "Projects",
 		kind: "modal",
-		gradient: "linear-gradient(135deg, #C08A5A 0%, #F2A663 100%)",
-		emoji: "📁",
+		gradient: "linear-gradient(135deg, #FFFFFF 0%, #EEF0F4 100%)",
+		image: filesIcon,
 	},
 	{
 		id: "tech",
 		name: "Tech Stack",
 		kind: "route",
 		url: "/tech-stack",
-		gradient: "linear-gradient(135deg, #6E37C2 0%, #B673FF 100%)",
-		emoji: "🧰",
+		gradient: "linear-gradient(135deg, #FFFFFF 0%, #EEF0F4 100%)",
+		image: finderIcon,
 	},
 	{
 		id: "contact",
 		name: "Contact",
 		kind: "modal",
-		gradient: "linear-gradient(135deg, #16C95C 0%, #5CE890 100%)",
-		emoji: "💬",
+		gradient: "linear-gradient(135deg, #29C354 0%, #1A9E3F 100%)",
+		image: imessageIcon,
 	},
 	{
 		id: "safari",

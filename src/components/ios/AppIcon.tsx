@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 import type { AppDef } from "../../constants/ios";
-import { getAppIconNode } from "./AppIcons";
 
 export type AppContext = "grid" | "dock";
 
@@ -28,8 +27,6 @@ const AppIcon = ({
 	labelOverride,
 	onClick,
 }: Props) => {
-	const builtIn = !iconOverride ? getAppIconNode(app.id) : null;
-
 	return (
 		<button
 			onClick={onClick}
@@ -53,18 +50,19 @@ const AppIcon = ({
 					) : app.image ? (
 						<img src={app.image} alt={app.name} className="w-full h-full object-cover" />
 					) : app.logo ? (
-						<img src={app.logo} alt={app.name} className="object-contain" style={{ width: "55%", height: "55%" }} />
-					) : builtIn ? (
-						builtIn
+						<img
+							src={app.logo}
+							alt={app.name}
+							className="object-contain"
+							style={{ width: "55%", height: "55%" }}
+						/>
 					) : (
 						<span className="text-[28px] leading-none drop-shadow-sm">{app.emoji}</span>
 					)}
 				</motion.div>
 
 				{badge !== undefined && badge > 0 && (
-					<span
-						className="absolute -top-1 -right-1 min-w-[22px] h-[22px] rounded-full bg-red-500 text-white text-[12px] font-bold flex items-center justify-center px-1.5 pointer-events-none shadow-lg"
-					>
+					<span className="absolute -top-1 -right-1 min-w-[22px] h-[22px] rounded-full bg-red-500 text-white text-[12px] font-bold flex items-center justify-center px-1.5 pointer-events-none shadow-lg">
 						{badge > 99 ? "99+" : badge}
 					</span>
 				)}
