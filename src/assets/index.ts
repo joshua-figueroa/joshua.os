@@ -31,8 +31,9 @@ import revdash from "./projects/revdash.png";
 import revdash_preview from "./projects/revdash_preview.png";
 import buff from "./projects/buff.png";
 import buff_preview from "./projects/buff_preview.png";
+import inkognito from "./projects/inkognito.png";
+import inkognito_preview from "./projects/inkognito_preview.png";
 import ernests from "./projects/ernests.png";
-import homelink from "./projects/homelink.png";
 import maze_runner from "./projects/maze_runner.png";
 
 export {
@@ -65,9 +66,10 @@ export {
 	ernests,
 	maze_runner,
 	google,
-	homelink,
 	revdash,
 	revdash_preview,
 	buff,
 	buff_preview,
+	inkognito,
+	inkognito_preview,
 };

@@ -1,10 +1,11 @@
 import revdashIcon from "../assets/projects/revdash.png";
 import buffIcon from "../assets/projects/buff.png";
+import inkognitoIcon from "../assets/projects/inkognito.png";
 import githubLogo from "../assets/github-white.svg";
 import linkedinLogo from "../assets/linkedin-white.svg";
 import safariIcon from "../assets/safari.webp";
 
-export type AppId = "about" | "projects" | "tech" | "contact" | "safari" | "github" | "linkedin" | "revdash" | "buff";
+export type AppId = "about" | "projects" | "tech" | "contact" | "safari" | "github" | "linkedin" | "revdash" | "buff" | "inkognito";
 
 export type AppKind = "modal" | "external" | "route";
 
@@ -89,10 +90,18 @@ export const APPS: AppDef[] = [
 		gradient: "linear-gradient(135deg, #FDE4CF 0%, #E07A5F 100%)",
 		image: buffIcon,
 	},
+	{
+		id: "inkognito",
+		name: "Inkognito",
+		kind: "route",
+		url: "/inkognito",
+		gradient: "linear-gradient(135deg, #1E1E2E 0%, #313244 100%)",
+		image: inkognitoIcon,
+	},
 ];
 
 export const DOCK_APPS: AppId[] = ["about", "projects", "contact", "safari"];
-export const GRID_APPS: AppId[] = ["tech", "github", "linkedin", "revdash", "buff"];
+export const GRID_APPS: AppId[] = ["tech", "github", "linkedin", "revdash", "buff", "inkognito"];
 
 export const getApp = (id: AppId): AppDef => {
 	const app = APPS.find((a) => a.id === id);

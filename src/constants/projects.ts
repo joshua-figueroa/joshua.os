@@ -1,7 +1,25 @@
-import { amazon, buff_preview, ernests, google, homelink, maze_runner, revdash_preview } from "../assets";
+import { amazon, buff_preview, ernests, google, inkognito_preview, maze_runner, revdash_preview } from "../assets";
 import { Project } from "../models/project";
 
 export const projects: Project[] = [
+	{
+		name: "Inkognito",
+		description:
+			"A macOS app that gives any USB or network printer an AirPrint identity, letting iPhones and iPads on the same network print to it wirelessly — no server, no driver, no fuss.",
+		tags: [
+			{
+				name: "swift",
+				color: "orange-text-gradient",
+			},
+			{
+				name: "macos",
+				color: "blue-text-gradient",
+			},
+		],
+		image: inkognito_preview,
+		published_link: "/inkognito",
+		source_code_link: "https://github.com/joshua-figueroa/Inkognito",
+	},
 	{
 		name: "Buff",
 		description:
@@ -101,23 +119,6 @@ export const projects: Project[] = [
 		],
 		image: ernests,
 		published_link: "https://ernestplaceboracay.com",
-	},
-	{
-		name: "Arduino HomeLink",
-		description:
-			"An innovative project that leverages Arduino and Bluetooth Low Energy (BLE) technology to create a seamless and efficient HomeLink system. This platform enables users to control and automate various home devices remotely, enhancing convenience and connectivity.",
-		tags: [
-			{
-				name: "swiftui",
-				color: "orange-text-gradient",
-			},
-			{
-				name: "arduino",
-				color: "blue-text-gradient",
-			},
-		],
-		image: homelink,
-		source_code_link: "https://github.com/joshua-figueroa/Arduino-BLE-HomeLink",
 	},
 	{
 		name: "RevDash",
