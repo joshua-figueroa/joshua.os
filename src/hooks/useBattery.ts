@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 
+interface BatteryManager extends EventTarget {
+	level: number;
+	charging: boolean;
+	chargingTime: number;
+	dischargingTime: number;
+}
+
 type BatteryState = {
 	level: number;
 	charging: boolean;
@@ -20,8 +27,7 @@ export function useBattery(): BatteryState {
 			setState({ level: battery.level, charging: battery.charging });
 		};
 
-		(navigator as Navigator & { getBattery(): Promise<BatteryManager> })
-			.getBattery()
+		(navigator as Navigator & { getBattery(): Promise<BatteryManager> }).getBattery()
 			.then((b) => {
 				battery = b;
 				update();
