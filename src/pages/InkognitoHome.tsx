@@ -180,6 +180,16 @@ const InkognitoHome = () => {
 					macOS menu bar utility
 				</motion.p>
 
+				<motion.p
+					className="font-black text-white-100 tracking-tight leading-none mb-2"
+					style={{ fontSize: "clamp(2rem, 5vw, 2.75rem)" }}
+					initial={{ opacity: 0, y: 10 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.45, delay: 0.12 }}
+				>
+					Inkognito
+				</motion.p>
+
 				{/* Marquee headline */}
 				<motion.h1
 					className="font-black tracking-tight text-white-100 leading-[1.02] mb-6"
@@ -302,7 +312,7 @@ const InkognitoHome = () => {
 				</div>
 			</section>
 
-			{/* ─────────────────── Download CTA placeholder ─────────────────── */}
+			{/* ─────────────────── Download CTA ─────────────────── */}
 			<section className="px-5 sm:px-8 lg:px-10 pb-24 max-w-screen-xl mx-auto">
 				<motion.div
 					className="rounded-3xl border p-8 lg:px-14 lg:py-14 flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-between lg:text-left gap-8"

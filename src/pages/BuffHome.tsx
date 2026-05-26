@@ -196,6 +196,16 @@ const BuffHome = () => {
 							macOS menu bar utility
 						</motion.p>
 
+						<motion.p
+							className="font-black text-white-100 tracking-tight leading-none mb-2"
+							style={{ fontSize: "clamp(2rem, 5vw, 2.75rem)" }}
+							initial={{ opacity: 0, y: 10 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.45, delay: 0.12 }}
+						>
+							Buff
+						</motion.p>
+
 						<motion.h1
 							className="font-black tracking-tight text-white-100 leading-[1.04]"
 							style={{
