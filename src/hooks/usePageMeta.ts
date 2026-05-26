@@ -10,7 +10,7 @@ type PageMeta = {
 const DEFAULT_TITLE = "Joshua Figueroa | Portfolio";
 const DEFAULT_DESC = "Hi! I'm Joshua. I develop cross-platform apps, user interfaces, and full-stack web applications.";
 const DEFAULT_URL = "https://joshuafigueroa.dev";
-const DEFAULT_IMAGE = "/thumbnail.jpeg";
+const DEFAULT_IMAGE = "/thumbnail.png";
 
 function setMeta(selector: string, attr: string, value: string) {
 	const el = document.querySelector(selector);
