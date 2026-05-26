@@ -1,7 +1,8 @@
-import { IoCellular, IoWifi, IoBatteryFull } from "react-icons/io5";
+import { IoCellular, IoWifi, IoBatteryFull, IoBatteryHalf, IoBatteryDead, IoBatteryCharging } from "react-icons/io5";
 import { useTime, formatLockTime } from "../../hooks/useTime";
 import { useDeviceType } from "../../hooks/useDeviceType";
 import { useFullscreen } from "../../hooks/useFullscreen";
+import { useBattery } from "../../hooks/useBattery";
 
 type Props = {
 	dark?: boolean;
@@ -11,7 +12,16 @@ const StatusBar = ({ dark = false }: Props) => {
 	const now = useTime();
 	const device = useDeviceType();
 	const fullscreen = useFullscreen();
+	const battery = useBattery();
 	const isPhone = device === "phone";
+
+	const BatteryIcon = battery.charging
+		? IoBatteryCharging
+		: battery.level > 0.5
+			? IoBatteryFull
+			: battery.level > 0.2
+				? IoBatteryHalf
+				: IoBatteryDead;
 
 	// On non-standalone iPhone Safari the real iOS status bar is already visible
 	// above our viewport — suppress the simulated one to avoid doubling.
@@ -31,9 +41,9 @@ const StatusBar = ({ dark = false }: Props) => {
 			)}
 
 			<div className="flex items-center gap-1.5 w-16 justify-end">
-				<IoCellular size={14} />
-				<IoWifi size={14} />
-				<IoBatteryFull size={20} />
+				<IoCellular size={16} />
+				<IoWifi size={18} />
+				<BatteryIcon size={22} />
 			</div>
 		</div>
 	);
