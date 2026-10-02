@@ -1,13 +1,13 @@
 import revdashIcon from "../assets/projects/revdash.png";
 import buffIcon from "../assets/projects/buff.png";
 import inkognitoIcon from "../assets/projects/inkognito.png";
-import contactsIcon from "../assets/contacts.png";
+import contactsIcon from "../assets/contacts.webp";
 import imessageIcon from "../assets/imessage.svg";
-import filesIcon from "../assets/files.png";
-import finderIcon from "../assets/finder.png";
+import filesIcon from "../assets/files.webp";
+import finderIcon from "../assets/finder.webp";
 import githubLogo from "../assets/github-white.svg";
 import linkedinLogo from "../assets/linkedin-white.svg";
-import safariIcon from "../assets/safari.png";
+import safariIcon from "../assets/safari.webp";
 
 export type AppId =
 	| "about"

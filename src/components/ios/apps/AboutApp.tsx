@@ -1,5 +1,5 @@
 import { services } from "../../../constants/service";
-import avatar from "../../../assets/joshua.png";
+import avatar from "../../../assets/joshua.webp";
 
 const ChevronRight = () => (
 	<svg width="9" height="14" viewBox="0 0 9 14" className="text-white/30 flex-shrink-0">
