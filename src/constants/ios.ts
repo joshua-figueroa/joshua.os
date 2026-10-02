@@ -91,8 +91,8 @@ export const APPS: AppDef[] = [
 	{
 		id: "revdash",
 		name: "RevDash",
-		kind: "route",
-		url: "/revdash",
+		kind: "external",
+		url: "https://revdashapp.com",
 		gradient: "linear-gradient(135deg, #2847A0 0%, #C08A5A 100%)",
 		image: revdashIcon,
 	},

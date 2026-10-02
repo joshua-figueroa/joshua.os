@@ -24,10 +24,8 @@ import jetpackcompose from "./tech/jetpackcompose.png";
 import kubernetes from "./tech/kubernetes.png";
 import raspberrypi from "./tech/raspberrypi.png";
 
-import appStoreBadge from "./app-store-badge.svg";
 import amazon from "./projects/amazon.png";
 import google from "./projects/google.png";
-import revdash from "./projects/revdash.png";
 import revdash_preview from "./projects/revdash_preview.png";
 import buff from "./projects/buff.png";
 import buff_preview from "./projects/buff_preview.png";
@@ -61,12 +59,10 @@ export {
 	jetpackcompose,
 	kubernetes,
 	raspberrypi,
-	appStoreBadge,
 	amazon,
 	ernests,
 	maze_runner,
 	google,
-	revdash,
 	revdash_preview,
 	buff,
 	buff_preview,

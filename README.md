@@ -17,7 +17,7 @@ A personal portfolio reimagined as an iPadOS / iOS 26 home screen. Lock screen, 
 -   **App Store-style Projects app** with a notification badge and project detail sheets
 -   **Settings-style Tech Stack app** with grouped tool sections
 -   **Notes-style About app**
--   **External apps** — GitHub, LinkedIn, Safari (→ google.joshuafigueroa.dev), and a route-based RevDash mini-site at `/revdash`
+-   **External apps** — GitHub, LinkedIn, Safari (→ google.joshuafigueroa.dev), and RevDash (→ revdashapp.com)
 -   **PWA-ready** — `apple-mobile-web-app-capable` + manifest `display: fullscreen` so adding to Home Screen on iOS yields a true full-screen experience
 -   **Fullscreen toggle** that detects iPhone Safari (where the Fullscreen API is blocked) and shows an Add-to-Home-Screen sheet instead
 
@@ -28,7 +28,6 @@ A personal portfolio reimagined as an iPadOS / iOS 26 home screen. Lock screen, 
 -   **React 18** + **TypeScript** + **Vite**
 -   **TailwindCSS** with custom design tokens (CSS variables) and iOS utilities (`.glass`, `.squircle`)
 -   **Framer Motion** for the zoom transitions, lock-screen drag, and bubble animations
--   **Embla Carousel** for the RevDash screenshot peek-carousel
 -   **react-icons** (Heroicons 2 + Ionicons 5) for status bar / app glyphs
 -   **EmailJS** for the Contact form
 
@@ -40,9 +39,6 @@ A personal portfolio reimagined as an iPadOS / iOS 26 home screen. Lock screen, 
 src/
 ├── pages/
 │   ├── HomeOS.tsx           # Lock + home + app overlay orchestrator
-│   ├── RevDashHome.tsx      # /revdash landing
-│   ├── RevDashSupport.tsx
-│   └── RevDashPrivacy.tsx
 ├── components/ios/
 │   ├── LockScreen.tsx
 │   ├── HomeScreen.tsx       # Wallpaper + StatusBar + Widgets + Grid + Dock

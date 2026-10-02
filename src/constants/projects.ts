@@ -140,6 +140,6 @@ export const projects: Project[] = [
 		],
 		image: revdash_preview,
 		source_code_link: "https://github.com/joshua-figueroa/RevDash",
-		published_link: "/revdash",
+		published_link: "https://revdashapp.com",
 	},
 ];
