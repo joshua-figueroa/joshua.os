@@ -1,26 +1,20 @@
-# fly.toml app configuration file generated for 3d-portfolio on 2026-04-29T06:32:28Z
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
+app = "joshua-os"
+primary_region = "sin"
 
-app = '3d-portfolio'
-primary_region = 'sin'
-
-[build]
-  [build.args]
-    VITE_APP_EMAILJS_SERVICE_ID = "service_gjj8yeu"
-    VITE_APP_EMAILJS_TEMPLATE_ID = "template_infsm8j"
-    VITE_APP_EMAILJS_PUBLIC_KEY = "L5za9Zb6wYS2RqMTx"
+[build.args]
+VITE_APP_EMAILJS_PUBLIC_KEY = "L5za9Zb6wYS2RqMTx"
+VITE_APP_EMAILJS_SERVICE_ID = "service_gjj8yeu"
+VITE_APP_EMAILJS_TEMPLATE_ID = "template_infsm8j"
 
 [http_service]
-  internal_port = 8080
-  force_https = true
-  auto_stop_machines = 'stop'
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ['app']
+auto_start_machines = true
+auto_stop_machines = true
+force_https = true
+internal_port = 8_080
+min_machines_running = 0
+processes = [ "app" ]
 
 [[vm]]
-  memory = '256mb'
-  cpu_kind = 'shared'
-  cpus = 1
+cpu_kind = "shared"
+cpus = 1
+memory = "256mb"
